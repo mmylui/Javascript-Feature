@@ -8,7 +8,6 @@ function createGameBoard () {
         div.setAttribute("id",i);
         gameBoard.appendChild(div);
         console.log(div);
-
     }
 }
 
@@ -23,10 +22,9 @@ function randomSootGhost() {
 }
     setInterval(randomSootGhost, 3000);
 
-//cursor to turn in a foot when in div
+//Add score board
+let scoreBoard = document.getElementById("scoreDisplay")
+let score = document.createElement("div");
+scoreBoard.appendChild(score);
 
-
-    const handCursor = document.createElement("img");
-    handCursor.src = "Images/Cursor.png";
-    gameBoard.style.cursor = handCursor;
 

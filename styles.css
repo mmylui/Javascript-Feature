@@ -1,4 +1,10 @@
-
+#scoreDisplay {
+    display: flex;
+    flex-direction: row;
+    width: 320px;
+    margin: 0 auto;
+    justify-content: flex-end;
+}
 #gameBoard {
     width:320px;
     height:320px;
