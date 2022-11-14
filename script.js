@@ -24,7 +24,18 @@ function randomSootGhost() {
 
 //Add score board
 let scoreBoard = document.getElementById("scoreDisplay")
-let score = document.createElement("div");
-scoreBoard.appendChild(score);
+let scoreText = document.createElement("div");
+let score = 0;
+scoreText.innerHTML = score;
+scoreBoard.appendChild(scoreText);
 
+//on click of soot ghost, score +10;
+//addeventlistener on randomDiv, on click, it will change score to score =+ 10;
+sootGhost.addEventListener("click", addScore);
+
+function addScore () {
+    console.log("click detected");
+    score += 10;
+    scoreText.innerHTML = score;
+}
 
