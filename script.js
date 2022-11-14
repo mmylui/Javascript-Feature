@@ -16,11 +16,28 @@ createGameBoard();
 //Function = Make soot ghost appear randomly on the grid
     const sootGhost = document.createElement("img");
     sootGhost.src = "Images/sootGhostIcon.gif";
-function randomSootGhost() {
+    const handprint = document.createElement("img");
+handprint.src = "Images/handprint2.png";
+
+
+function startGame() {
     let randomDiv = document.getElementById(Math.floor(Math.random()*100));
     randomDiv.appendChild(sootGhost);
+    
+    function removeHandprint () {
+        randomDiv.removeChild(randomDiv.children[0]);
+    }
+    function addScore () {
+        console.log("click detected");
+        score += 10;
+        scoreText.innerHTML = score;
+        randomDiv.replaceChild(handprint,randomDiv.firstChild);
+        setTimeout(removeHandprint,500);
+    }
+    sootGhost.addEventListener("click", addScore);
+
 }
-    setInterval(randomSootGhost, 3000);
+    setInterval(startGame, 3000);
 
 //Add score board
 let scoreBoard = document.getElementById("scoreDisplay")
@@ -30,12 +47,13 @@ scoreText.innerHTML = score;
 scoreBoard.appendChild(scoreText);
 
 //on click of soot ghost, score +10;
-//addeventlistener on randomDiv, on click, it will change score to score =+ 10;
-sootGhost.addEventListener("click", addScore);
+//addeventlistener on sootghost image, on click, it will change score to score =+ 10;
+//change image of randomDiv to handprint when soot ghost image is clicked
 
-function addScore () {
-    console.log("click detected");
-    score += 10;
-    scoreText.innerHTML = score;
-}
+
+
+
+
+
+
 
