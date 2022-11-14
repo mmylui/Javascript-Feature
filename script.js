@@ -22,3 +22,11 @@ function randomSootGhost() {
     randomDiv.appendChild(sootGhost);
 }
     setInterval(randomSootGhost, 3000);
+
+//cursor to turn in a foot when in div
+
+
+    const handCursor = document.createElement("img");
+    handCursor.src = "Images/Cursor.png";
+    gameBoard.style.cursor = handCursor;
+
