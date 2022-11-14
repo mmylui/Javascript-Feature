@@ -6,7 +6,6 @@ function createGameBoard () {
     for (let i = 0; i < 100; i ++) {
         let div = document.createElement("div");
         div.setAttribute("id",i);
-        div.innerHTML=i;
         gameBoard.appendChild(div);
         console.log(div);
 
