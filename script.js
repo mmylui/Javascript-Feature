@@ -3,7 +3,7 @@ const gameBoard = document.getElementById("gameBoard");
 
 //create gameBoard
 function createGameBoard () {
-    for (let i = 1; i < 101; i ++) {
+    for (let i = 0; i < 100; i ++) {
         let div = document.createElement("div");
         div.setAttribute("id",i);
         div.innerHTML=i;
@@ -16,12 +16,10 @@ function createGameBoard () {
 createGameBoard();
 
 //Function = Make soot ghost appear randomly on the grid
-let squares = document.querySelector(".gameBoard div");
-function randomSootGhost(squares) {
     const sootGhost = document.createElement("img");
     sootGhost.src = "Images/sootGhostIcon.gif";
-    gameBoard.appendChild(sootGhost);
-
+function randomSootGhost() {
+    let randomDiv = document.getElementById(Math.floor(Math.random()*100));
+    randomDiv.appendChild(sootGhost);
 }
-
-randomSootGhost(squares);
+    setInterval(randomSootGhost, 3000);
