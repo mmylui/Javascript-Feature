@@ -1,8 +1,15 @@
-#scoreDisplay {
+#scoreTimeContainer {
     display: flex;
     flex-direction: row;
     width: 320px;
     margin: 0 auto;
+    justify-content: center;
+}
+
+#timeDisplay {
+    justify-content: flex-start;
+}
+#scoreDisplay {
     justify-content: flex-end;
 }
 #gameBoard {
