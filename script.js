@@ -51,15 +51,23 @@ scoreText.innerHTML = score;
 scoreBoard.appendChild(scoreText);
 
 //set timer 30s, setInterval updating every second, timer starting at 30s, reducing by one at each second interval, when timer = 0, game over, popup score = score
-function timerUpdate() {
+function timerDisplay() {
     const timeText = document.createElement("div");
     let time = 30;
     timeText.innerHTML = time + "s"
     const timeDisplay = document.getElementById("timeDisplay")
     timeDisplay.appendChild(timeText);
+
+    function timerUpdate() {
+        time -= 1;
+        timeText.innerHTML = time + "s";
+    }
+
+    setInterval(timerUpdate, 1000);
 }
 
-timerUpdate();
+
+timerDisplay();
 
 
 
