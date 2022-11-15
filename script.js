@@ -13,6 +13,8 @@ function createGameBoard () {
 
 createGameBoard();
 
+function startGame(){
+
 //Function = Make soot ghost appear randomly on the grid
 //on click of soot ghost, score +10;
 //addeventlistener on sootghost image, on click, it will change score to score =+ 10;
@@ -82,12 +84,14 @@ let timerUpdateIntervalID = setInterval(timerUpdate, 1000);
 
 
 timerDisplay();
-
+}
 //To make timer stop at 30s, to create popup that says gameover and score. To reset the game when ok is pressed
 //if time >= 1 then time -= 1 and display, otherwise clear interval for soot ghost and timerupdate, popup message
 
 
-
+//add event listener to press to start button, which initialises the setinterval for the game
+const startBtn = document.getElementById("startGame");
+startBtn.addEventListener("click",startGame);
 
 
 
