@@ -1,16 +1,35 @@
+.gameInfo {
+    margin: 0 auto;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding:0;
+}
+h2, h4, p{
+    margin: 0;
+    padding-top: 15px;
+}
+h4 {
+    text-decoration-line: underline;
+}
 #scoreTimeContainer {
     display: flex;
     flex-direction: row;
     width: 320px;
     margin: 0 auto;
-    justify-content: center;
+    align-items: space-evenly;
+    padding:15px;
 }
 
 #timeDisplay {
-    justify-content: flex-start;
+    width:100%;
+    text-align: center;
 }
 #scoreDisplay {
-    justify-content: flex-end;
+    width: 100%;
+    text-align: center;
 }
 #gameBoard {
     width:320px;
