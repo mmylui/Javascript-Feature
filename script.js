@@ -33,7 +33,7 @@ function randomSootGhost() {
     randomDiv.appendChild(sootGhost);
 }
 //Every three seconds randomSootGhost()
-    setInterval(randomSootGhost, 900);
+let randomSootGhostIntervalID = setInterval(randomSootGhost, 980);
 //Add score board
 let scoreBoard = document.getElementById("scoreDisplay")
 let scoreText = document.createElement("div");
@@ -65,15 +65,27 @@ function timerDisplay() {
     timeDisplay.appendChild(timeText);
 
     function timerUpdate() {
-        time -= 1;
-        timeText.innerHTML = time + "s";
+        if (time >= 1) {
+            time -= 1;
+            timeText.innerHTML = time + "s";
+        } else {
+            clearInterval(timerUpdateIntervalID);
+            clearInterval(randomSootGhostIntervalID);
+            alert("GAME OVER\nYou scored " + score + " points!");
+
+        }
+
     }
 
-    setInterval(timerUpdate, 1000);
+let timerUpdateIntervalID = setInterval(timerUpdate, 1000);
 }
 
 
 timerDisplay();
+
+//To make timer stop at 30s, to create popup that says gameover and score. To reset the game when ok is pressed
+//if time >= 1 then time -= 1 and display, otherwise clear interval for soot ghost and timerupdate, popup message
+
 
 
 
