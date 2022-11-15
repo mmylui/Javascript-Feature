@@ -33,7 +33,7 @@ function randomSootGhost() {
     randomDiv.appendChild(sootGhost);
 }
 //Every three seconds randomSootGhost()
-    setInterval(randomSootGhost, 3000);
+    setInterval(randomSootGhost, 900);
 //Add score board
 let scoreBoard = document.getElementById("scoreDisplay")
 let scoreText = document.createElement("div");
