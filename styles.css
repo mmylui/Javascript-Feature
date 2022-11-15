@@ -1,7 +1,7 @@
 .gameInfo {
     margin: 0 auto;
     width: 320px;
-    display: flex;
+    display: block;
     flex-direction: column;
     justify-content: center;
     text-align: center;
@@ -9,7 +9,7 @@
 }
 h2, h4, p{
     margin: 0;
-    padding-top: 15px;
+    padding: 10px;
 }
 h4 {
     text-decoration-line: underline;

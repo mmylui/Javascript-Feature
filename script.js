@@ -9,12 +9,29 @@ function createGameBoard () {
         gameBoard.appendChild(div);
         console.log(div);
     }
+
 }
 
 createGameBoard();
 
-function startGame(){
+let scoreBoard = document.getElementById("scoreDisplay")
+let scoreText = document.createElement("div");
+let score = 0;
+scoreText.innerHTML = score;
+scoreBoard.appendChild(scoreText);
 
+const timeText = document.createElement("div");
+    let time = 30;
+    timeText.innerHTML = time + "s"
+    const timeDisplay = document.getElementById("timeDisplay")
+    timeDisplay.appendChild(timeText);
+
+
+
+function startGame(){
+//hide instructions
+const instructions = document.getElementById("gameInstructions")
+instructions.style.display = "none";
 //Function = Make soot ghost appear randomly on the grid
 //on click of soot ghost, score +10;
 //addeventlistener on sootghost image, on click, it will change score to score =+ 10;
@@ -37,11 +54,7 @@ function randomSootGhost() {
 //Every three seconds randomSootGhost()
 let randomSootGhostIntervalID = setInterval(randomSootGhost, 980);
 //Add score board
-let scoreBoard = document.getElementById("scoreDisplay")
-let scoreText = document.createElement("div");
-let score = 0;
-scoreText.innerHTML = score;
-scoreBoard.appendChild(scoreText);
+
 
 function addScore () {
 console.log("click detected");
@@ -60,11 +73,7 @@ randomDiv.removeChild(randomDiv.firstChild);
 
 //set timer 30s, setInterval updating every second, timer starting at 30s, reducing by one at each second interval, when timer = 0, game over, popup score = score
 function timerDisplay() {
-    const timeText = document.createElement("div");
-    let time = 30;
-    timeText.innerHTML = time + "s"
-    const timeDisplay = document.getElementById("timeDisplay")
-    timeDisplay.appendChild(timeText);
+    
 
     function timerUpdate() {
         if (time >= 1) {
@@ -74,6 +83,9 @@ function timerDisplay() {
             clearInterval(timerUpdateIntervalID);
             clearInterval(randomSootGhostIntervalID);
             alert("GAME OVER\nYou scored " + score + " points!");
+            instructions.style.display = "block";
+            score = 0;
+            scoreText.innerHTML = score;
 
         }
 
