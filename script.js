@@ -80,12 +80,15 @@ function timerDisplay() {
             time -= 1;
             timeText.innerHTML = time + "s";
         } else {
+            let randomDiv = sootGhost.parentNode;
+            randomDiv.removeChild(randomDiv.firstChild);
             clearInterval(timerUpdateIntervalID);
             clearInterval(randomSootGhostIntervalID);
             alert("GAME OVER\nYou scored " + score + " points!");
             instructions.style.display = "block";
             score = 0;
             scoreText.innerHTML = score;
+            time = 30;
 
         }
 
