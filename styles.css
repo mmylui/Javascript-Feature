@@ -1,18 +1,27 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+}
+
 .gameInfo {
     margin: 0 auto;
-    width: 320px;
+    width: 100%;
     display: block;
     flex-direction: column;
     justify-content: center;
     text-align: center;
     padding:0;
 }
+
 h2, h4, p{
     margin: 0;
     padding: 10px;
 }
 h4 {
     text-decoration-line: underline;
+}
+
+button {
+    font-family: 'Courier New', Courier, monospace;
 }
 #scoreTimeContainer {
     display: flex;
@@ -34,7 +43,7 @@ h4 {
 #gameBoard {
     width:320px;
     height:320px;
-    border: 1px solid brown;
+    border: 1px solid #d4d4d4;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
@@ -43,7 +52,7 @@ h4 {
 }
 
 .gameBoard div {
-    border: 1px solid brown;
+    border: 1px solid  #d4d4d4;
     width:30px;
     height:30px;
     display: flex;

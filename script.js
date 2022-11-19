@@ -47,12 +47,18 @@ function randomDivID() {
 }
 
 function randomSootGhost() {
-    console.log(randomDivID());
     let randomDiv = document.getElementById(randomDivID());
-    randomDiv.appendChild(sootGhost);
+    //if randomDiv has a child then replace child, if no children then append child sootGhost
+    if (randomDiv.hasChildNodes() == true) {
+        console.log("Happened");
+        randomDiv.replaceChild(sootGhost, randomDiv.firstChild);
+    } else {
+        randomDiv.appendChild(sootGhost);
+    }
+    
 }
 //Every three seconds randomSootGhost()
-let randomSootGhostIntervalID = setInterval(randomSootGhost, 980);
+let randomSootGhostIntervalID = setInterval(randomSootGhost, 920);
 //Add score board
 
 
@@ -84,11 +90,19 @@ function timerDisplay() {
             randomDiv.removeChild(randomDiv.firstChild);
             clearInterval(timerUpdateIntervalID);
             clearInterval(randomSootGhostIntervalID);
-            alert("GAME OVER\nYou scored " + score + " points!");
             instructions.style.display = "block";
+            time = 30;
+            if (score >= 250) {
+                alert("GAME OVER\nYou scored " + score + " points!\nWell done!");
             score = 0;
             scoreText.innerHTML = score;
-            time = 30;
+            } else {
+                alert("GAME OVER\nYou scored " + score + " points!\nPlay again for a higher score!");
+            score = 0;
+            scoreText.innerHTML = score;
+            }
+            
+
 
         }
 
