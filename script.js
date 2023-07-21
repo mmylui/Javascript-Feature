@@ -39,7 +39,7 @@ instructions.style.display = "none";
 const sootGhost = document.createElement("img");
 sootGhost.src = "Images/sootGhostIcon.gif";
 const handprint = document.createElement("img");
-handprint.src = "Images/handprint2.png";
+handprint.src = "Images/Handprint2.png";
 
 function randomDivID() {
     let randomDivID = Math.floor(Math.random()*100);
